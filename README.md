@@ -1,0 +1,1 @@
+# sed24-hot-create-cli-plugin
