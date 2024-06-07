@@ -22,16 +22,28 @@ const hook: Hook.Prerun = async function () {
     async (e: ScopedPreDeploy) => {
       // eslint-disable-next-line
       console.log('WE ARE IN THE HOOK');
+
+      // The `ScopedPreDeploy` event contains a `componentSet` object that represents the components that are being deployed.
+      // The `getSourceComponents()` method serializes the contents of the ComponentSet as a collection of source-backed components.
+      // We'll convert that collection to an array so we can iterate over it.
+      const sourceComponents = e.componentSet.getSourceComponents().toArray();
+
+
+      console.log(e.orgId);
+      console.log(sourceComponents);
       // eslint-disable-next-line
-      await console.log(e.orgId);
+      console.log(e.orgId);
+      return Promise.resolve();
     },
-    'sample-hook#scopedPreDeploy'
+    // 'sample-hook#scopedPreDeploy' // Commented out to work around the 
   );
 
   lifecycle.getListeners('scopedPreDeploy').forEach((listener) => {
     // eslint-disable-next-line
     console.log(listener);
   });
+
+
 };
 
 export default hook;
