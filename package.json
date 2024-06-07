@@ -1,7 +1,7 @@
 {
   "name": "deployment-validator",
   "description": "Blocks deployment when metadata does not meet specified standards.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@oclif/core": "^4.0.0",
     "@salesforce/core": "^7.2.0",
