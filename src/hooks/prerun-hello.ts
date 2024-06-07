@@ -19,7 +19,7 @@ const hook: Hook.Prerun = async function ({ Command }) {
   // This will allow us to print messages to the console.
   const { ux } = await import('@oclif/core');
 
-  // Print a "Hello" message to the console.
+  // Print a green "Hello" message to the console.
   // The message includes the name and version of the plugin that implements the command the user ran.
   ux.stdout(ux.colorize('green', `Hello from the prerun hook!\nThe plugin in use is: ${plugin.name} (${plugin.version})`));
 };
