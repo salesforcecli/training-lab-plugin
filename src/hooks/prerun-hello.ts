@@ -9,10 +9,9 @@ import { type Hook } from '@oclif/core';
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const hook: Hook.Prerun = async function ({ Command }) {
-  // Don't run this hook if the --json flag is set
-  if (process.argv.includes('--json')) return;
 
-  // Don't run this hook if the `Command` object doesn't have a `plugin` property.
+  // Extract the `plugin` object from the `Command` object.
+  // This object contains information about the plugin that is currently running.
   const { plugin } = Command;
   if (!plugin) return;
 
@@ -20,8 +19,9 @@ const hook: Hook.Prerun = async function ({ Command }) {
   // This will allow us to print messages to the console.
   const { ux } = await import('@oclif/core');
 
-  // Print a message to the console.
-  ux.warn(`Hello from the prerun hook of "${plugin.name}" (${plugin.version})!`);
+  // Print a "Hello" message to the console.
+  // The message includes the name and version of the plugin that implements the command the user ran.
+  ux.stdout(ux.colorize('green', `Hello from the prerun hook!\nThe plugin in use is: ${plugin.name} (${plugin.version})`));
 };
 
 export default hook;
