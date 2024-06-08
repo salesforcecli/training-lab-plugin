@@ -12,7 +12,7 @@ import { Lifecycle }  from '@salesforce/core';
 import { ScopedPreDeploy } from '@salesforce/source-deploy-retrieve';
 
 // The suffix that all test class names must have.
-const testClassSuffix = 'Test2';
+const testClassSuffix = 'Test';
 
 // eslint-disable-next-line @typescript-eslint/require-await
 const hook: Hook.Prerun = async function () {
