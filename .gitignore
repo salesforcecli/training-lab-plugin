@@ -47,3 +47,9 @@ node_modules
 # os specific files
 .DS_Store
 .idea
+
+# ignore SFDX files
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
