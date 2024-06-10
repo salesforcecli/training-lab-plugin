@@ -1,4 +1,4 @@
-# deployment-validator
+# The `deployment-validator` CLI Plugin
 
 ## Using the template
 
