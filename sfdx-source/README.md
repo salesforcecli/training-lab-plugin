@@ -3,7 +3,7 @@
 ## Create a new scratch org
 
 ```bash
-sf org create scratch -d -a MyScratchOrg -f config/scratch-def.json
+sf org create scratch -d -a MyScratchOrg -f sfdx-config/scratch-def.json
 ```
 
 ## Deploy source to the new scratch org
