@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Exit on any error
+set -e
+
+# Handle script errors.
+function handle_error {
+  echo
+  echo -e  "\u274C"" Training Lab Environment Setup Failed"
+  echo
+}
+
+# Send trapped errors to the error handler.
+trap handle_error ERR
+
+# Install Yarn.
+echo
+echo "1. Installing Yarn"
+npm install -g yarn
+
+# Install Typescript.
+echo
+echo "2. Installing Typescript"
+npm install -g typescript
+
+# Set generic Git config values for name and email.
+# This is required to before using Git features in VS Code.
+echo
+echo "3. Set generic Git name/email config"
+echo
+git config --global user.name "Workshop User"
+git config --global user.email "me@email.com"
+echo "--> Git Name: $(git config --get user.name)"
+echo "--> Git Email: $(git config --get user.email)"
+
+# Everything completed successfully
+echo
+echo -e "\u2705"" Training Lab Environment Setup Complete"
+echo
