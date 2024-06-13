@@ -26,7 +26,9 @@ export default class World extends SfCommand<HelloWorldResult> {
   public async run(): Promise<HelloWorldResult> {
     const { flags } = await this.parse(World);
     const time = new Date().toDateString();
+    this.log('');
     this.log(messages.getMessage('info.hello', [flags.name, time]));
+    this.log('');
     return {
       name: flags.name,
       time,
