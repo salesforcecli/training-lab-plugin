@@ -77,13 +77,13 @@ if [ -n "$github_user_name" ]; then
   echo "--> Git Name: $github_user_name (already set)"
 else
   git config --global user.name "GitHub User"
-  echo "--> Git Name: $(git config --global user.name)"
+  echo "--> Git Name: $(git config --get --global user.name)"
 fi
 if [ -n "$github_user_email" ]; then
   echo "--> Git Name: $github_user_email (already set)"
 else
   git config --global user.email "me@email.com"
-  echo "--> Git Email: $(git config --global user.email)"
+  echo "--> Git Email: $(git config --get --global user.email)"
 fi
 
 handle_success
