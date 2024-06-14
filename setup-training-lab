@@ -1,5 +1,12 @@
 #!/bin/bash
-
+#
+# This script helps set up the CodeBuilder environment used
+# during the CLI Plugin hands-on workshop by doing the following
+# 1. Installs the Yarn NPM package globally.
+# 2. Installs the Typescript NPM package globally.
+# 3. Sets global Git config values for `user.name` and `user.email`
+#    This is a requirement for the Git extension for VS Code to work.
+#
 # Exit on any error
 set -e
 
@@ -10,30 +17,73 @@ function handle_error {
   echo
 }
 
+# Handle script success.
+function handle_success {
+  echo
+  echo "──────────────────────────────────────────"
+  echo
+  echo -e "\u2705"" Training Lab Environment Setup Complete"
+  echo
+  echo "──────────────────────────────────────────"
+  echo
+}
+
 # Send trapped errors to the error handler.
 trap handle_error ERR
 
+# Announce that the Training Lab Environment Setup process has started.
+echo
+echo "──────────────────────────────────────────"
+echo
+echo -e "\U1F680"" Starting Training Lab Environment Setup"
+ 
 # Install Yarn.
 echo
-echo "1. Installing Yarn"
+echo "──────────────────────────────────────────"
+echo "(1) Installing Yarn"
+echo "──────────────────────────────────────────"
 npm install -g yarn
 
 # Install Typescript.
 echo
-echo "2. Installing Typescript"
+echo "──────────────────────────────────────────"
+echo "(2) Installing Typescript"
+echo "──────────────────────────────────────────"
 npm install -g typescript
 
-# Set generic Git config values for name and email.
+# Disable the ERR trap and allow script errors
+# This is requied because bash interprets an attempt
+# to read an unset git config variable as an error.
+trap - ERR
+set +e
+
+# Save existing global Git config in variables.
+github_user_name=$(git config --global user.name)
+github_user_email=$(git config --global user.email)
+
+# Enable the ERR trap and disallow script errors.
+set -e
+trap handle_error ERR
+
+# Set generic Git config values for name and email, but
+# ONLY if these global config values were NOT already set.
 # This is required to before using Git features in VS Code.
 echo
-echo "3. Set generic Git name/email config"
+echo "──────────────────────────────────────────"
+echo "(3) Setting global Git name/email config"
+echo "──────────────────────────────────────────"
 echo
-git config --global user.name "Workshop User"
-git config --global user.email "me@email.com"
-echo "--> Git Name: $(git config --get user.name)"
-echo "--> Git Email: $(git config --get user.email)"
+if [ -n "$github_user_name" ]; then
+  echo "--> Git Name: $github_user_name (already set)"
+else
+  git config --global user.name "GitHub User"
+  echo "--> Git Name: $(git config --get user.name)"
+fi
+if [ -n "$github_user_email" ]; then
+  echo "--> Git Name: $github_user_email (already set)"
+else
+  git config --global user.email "me@email.com"
+  echo "--> Git Email: $(git config --get user.email)"
+fi
 
-# Everything completed successfully
-echo
-echo -e "\u2705"" Training Lab Environment Setup Complete"
-echo
+handle_success
