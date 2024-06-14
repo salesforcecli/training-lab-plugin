@@ -1,5 +1,5 @@
 @isTest
-public class TestGetAccounts {
+public class GetAccountsTest {
 
     @isTest static void testGetAccounts() {
         // Setup test data
