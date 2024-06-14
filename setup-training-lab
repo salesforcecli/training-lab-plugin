@@ -58,8 +58,8 @@ trap - ERR
 set +e
 
 # Save existing global Git config in variables.
-github_user_name=$(git config --global user.name)
-github_user_email=$(git config --global user.email)
+github_user_name=$(git config --get --global user.name)
+github_user_email=$(git config --get --global user.email)
 
 # Enable the ERR trap and disallow script errors.
 set -e
