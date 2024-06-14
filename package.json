@@ -48,14 +48,7 @@
         "description": "Commands to say hello."
       }
     },
-    "hooks": {
-      "init": [
-        "./lib/hooks/init-predeploy"
-      ],
-      "prerun": [
-        "./lib/hooks/prerun-hello"
-      ]
-    },
+    "hooks": { },
     "flexibleTaxonomy": true
   },
   "scripts": {
