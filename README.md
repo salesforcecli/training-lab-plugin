@@ -8,6 +8,12 @@ This repository provides a simple example of a Salesforce CLI plugin that does t
 
 TODO: Update the rest of this doc.
 
+## Prepare Your CodeBuilder Training Environment
+
+```bash
+curl https://raw.githubusercontent.com/ImJohnMDaniel/sed24-hot-create-cli-plugin/main/setup-training-lab | bash
+```
+
 ## Install
 
 ```bash
