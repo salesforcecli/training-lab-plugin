@@ -1,6 +1,8 @@
-# The `deployment-validator` CLI Plugin
+# Salesforce CLI Plugin Training Lab
 
-This repository provides a simple example of a Salesforce CLI plugin that does three things.
+This repository provides the Training Lab sample code for the Salesforce CLI Plugin workshop.
+
+The project contains a simple example of a Salesforce CLI plugin that does three things.
 
 1. Creates a "hello world" CLI command: `sf hello world`.
 2. Creates a CLI hook that runs before any `sf` command is executed.
