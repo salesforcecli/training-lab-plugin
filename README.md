@@ -1,4 +1,4 @@
-# Training Lab: Salesforce CLI Plugins
+# Training Lab: Salesforce CLI Plugin
 
 This Training Lab demonstrates how to build a simple Salesforce CLI plugin.
 
