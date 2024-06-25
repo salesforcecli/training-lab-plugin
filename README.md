@@ -1,8 +1,8 @@
-# Training Lab: Salesforce CLI Plugin Workshop
+# Training Lab: Salesforce CLI Plugins
 
-This repository provides the Training Lab sample code for the Salesforce CLI Plugin workshop.
+This Training Lab demonstrates how to build a simple Salesforce CLI plugin.
 
-The project contains a simple example of a Salesforce CLI plugin that does three things.
+The sample code provided will help you build a working example of a Salesforce CLI plugin that does three things.
 
 1. Creates a "hello world" CLI command: `sf hello world`.
 2. Creates a CLI hook that runs before any `sf` command is executed.
