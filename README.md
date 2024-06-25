@@ -1,4 +1,4 @@
-# Salesforce CLI Plugin Training Lab
+# Training Lab: Salesforce CLI Plugin Workshop
 
 This repository provides the Training Lab sample code for the Salesforce CLI Plugin workshop.
 
