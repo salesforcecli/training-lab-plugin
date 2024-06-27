@@ -8,7 +8,7 @@ import { ScopedPreDeploy } from '@salesforce/source-deploy-retrieve';
 const testClassSuffix = 'Test';
 
 // eslint-disable-next-line @typescript-eslint/require-await
-const hook: Hook.Prerun = async function () {
+const hook: Hook.Init = async function () {
 
   // Get the singleton instance of the `Lifecycle` class and register a listener for the `scopedPreDeploy` event.
   // This event is emitted from the `source-deploy-retrieve` library before a source deployment is performed.
