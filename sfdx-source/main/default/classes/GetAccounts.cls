@@ -1,4 +1,6 @@
-// A simple Apex class that returns 10 Account records.
+/**
+ * A simple Apex class that returns 10 Account records.
+ */
 public class GetAccounts {
 
     // Get 10 Account records.

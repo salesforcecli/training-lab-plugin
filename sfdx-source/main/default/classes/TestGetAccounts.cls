@@ -1,3 +1,6 @@
+/**
+ * Test class for the `GetAccounts` class.
+ */
 @isTest
 public class TestGetAccounts {
 
