@@ -13,7 +13,7 @@ TODO: Update the rest of this doc.
 ## Prepare Your CodeBuilder Training Environment
 
 ```bash
-curl https://raw.githubusercontent.com/ImJohnMDaniel/sed24-hot-create-cli-plugin/main/setup-training-lab | bash
+curl https://raw.githubusercontent.com/salesforcecli/training-lab-plugin/main/setup-training-lab | bash
 ```
 
 ## Install
